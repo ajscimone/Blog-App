@@ -9,14 +9,18 @@
                 <div class = "content">
                     <span><%=blog.created.toDateString() %></span>
                 </div>
-                
+                <hr>
                 <div class = "description segment">
-                    <p><%=blog.body%></p>
+                    <p><%-blog.body%></p>
                 </div>
-                
+                    <form class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                        
+                        <a href = "/blogs/<%= blog._id %>/edit" class="ui yellow basic button">Edit</a> 
+                        
+                        <button class="ui red basic button" type = "submit">Delete</button>                       
+                    </form>
         </div>
     </div>
-
 </div>
 
 
